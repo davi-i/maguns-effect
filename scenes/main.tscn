@@ -1,0 +1,92 @@
+[gd_scene load_steps=5 format=3 uid="uid://bxrq0lmum71o1"]
+
+[ext_resource type="PackedScene" uid="uid://drlsfn6ohe2ks" path="res://scenes/player.tscn" id="1_wvyri"]
+[ext_resource type="PackedScene" uid="uid://0x1xd15yo7oa" path="res://scenes/floor.tscn" id="2_70qte"]
+[ext_resource type="PackedScene" uid="uid://c5mtglhruqqub" path="res://scenes/carregador.tscn" id="2_y16s4"]
+[ext_resource type="PackedScene" uid="uid://dptrg3pim0at5" path="res://scenes/enemy.tscn" id="4_rbqxo"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_wvyri")]
+z_index = 1
+position = Vector2(-997, 208)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(0, -208)
+zoom = Vector2(0.5, 0.5)
+
+[node name="Floor" parent="." instance=ExtResource("2_70qte")]
+position = Vector2(6115, 486)
+scale = Vector2(20000, 270)
+
+[node name="Carregador" parent="." instance=ExtResource("2_y16s4")]
+position = Vector2(3777, 261)
+c_massa = 1.0
+
+[node name="Enemy" parent="." instance=ExtResource("4_rbqxo")]
+position = Vector2(0, 248)
+
+[node name="Floor2" parent="." instance=ExtResource("2_70qte")]
+position = Vector2(-3954, -2893)
+scale = Vector2(270, 7200)
+
+[node name="Floor3" parent="." instance=ExtResource("2_70qte")]
+position = Vector2(6936, -3037)
+scale = Vector2(270, 7200)
+
+[node name="Floor4" parent="." instance=ExtResource("2_70qte")]
+position = Vector2(-298, 19)
+scale = Vector2(1000, 120)
+
+[node name="Floor5" parent="." instance=ExtResource("2_70qte")]
+position = Vector2(-1567, -259)
+scale = Vector2(1000, 120)
+
+[node name="Floor6" parent="." instance=ExtResource("2_70qte")]
+position = Vector2(-2526, -480)
+scale = Vector2(1000, 120)
+
+[node name="Floor7" parent="." instance=ExtResource("2_70qte")]
+position = Vector2(-3263, -794)
+scale = Vector2(1000, 120)
+
+[node name="Carregador2" parent="." instance=ExtResource("2_y16s4")]
+position = Vector2(-3642, 291)
+tipo_carregador = 2
+c_capacidade = 20
+c_quantidade = 15
+c_massa = 0.5
+
+[node name="Carregador3" parent="." instance=ExtResource("2_y16s4")]
+position = Vector2(-3689, -928)
+tipo_carregador = 1
+c_capacidade = 5
+c_quantidade = 5
+c_massa = 0.3
+
+[node name="Enemy2" parent="." instance=ExtResource("4_rbqxo")]
+position = Vector2(0, -137)
+
+[node name="Enemy3" parent="." instance=ExtResource("4_rbqxo")]
+position = Vector2(-1568, -543)
+
+[node name="Enemy4" parent="." instance=ExtResource("4_rbqxo")]
+position = Vector2(-2489, -841)
+
+[node name="Enemy5" parent="." instance=ExtResource("4_rbqxo")]
+position = Vector2(-3283, -1076)
+
+[node name="Enemy6" parent="." instance=ExtResource("4_rbqxo")]
+position = Vector2(-3346, 195)
+
+[node name="Enemy7" parent="." instance=ExtResource("4_rbqxo")]
+position = Vector2(-2331, 177)
+
+[node name="Enemy8" parent="." instance=ExtResource("4_rbqxo")]
+position = Vector2(-1680, 164)
+
+[node name="Enemy9" parent="." instance=ExtResource("4_rbqxo")]
+position = Vector2(1669, 183)
+
+[node name="Enemy10" parent="." instance=ExtResource("4_rbqxo")]
+position = Vector2(2906, 202)

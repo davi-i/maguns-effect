@@ -1,0 +1,34 @@
+[gd_scene load_steps=4 format=3 uid="uid://drlsfn6ohe2ks"]
+
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_mrjia"]
+[ext_resource type="PackedScene" uid="uid://h883oy5idpa0" path="res://scenes/gun.tscn" id="1_n6jem"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5dwum"]
+size = Vector2(98, 200)
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_mrjia")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_5dwum")
+
+[node name="ChangesDirection" type="Node2D" parent="."]
+
+[node name="Polygon2D" type="Polygon2D" parent="ChangesDirection"]
+position = Vector2(-50, -100)
+color = Color(0.861493, 0.502353, 0.978722, 1)
+polygon = PackedVector2Array(0, 0, 0, 200, 100, 200, 100, 0)
+
+[node name="Shotgun" parent="ChangesDirection" instance=ExtResource("1_n6jem")]
+position = Vector2(95, -21)
+tipo_carregador = 0
+
+[node name="Rifle" parent="ChangesDirection" instance=ExtResource("1_n6jem")]
+visible = false
+position = Vector2(95, -21)
+tipo_carregador = 1
+
+[node name="Pistol" parent="ChangesDirection" instance=ExtResource("1_n6jem")]
+visible = false
+position = Vector2(95, -21)
+tipo_carregador = 2

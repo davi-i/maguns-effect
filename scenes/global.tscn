@@ -1,0 +1,58 @@
+[gd_scene load_steps=2 format=3 uid="uid://c1j0k76juu8ky"]
+
+[ext_resource type="Script" path="res://scripts/global.gd" id="1_cvqao"]
+
+[node name="Global" type="Node"]
+script = ExtResource("1_cvqao")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HopUp" type="Label" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+text = "Hop Up:"
+
+[node name="Value" type="Label" parent="CanvasLayer/VBoxContainer/HopUp"]
+layout_mode = 0
+offset_left = 76.0
+offset_right = 117.0
+offset_bottom = 23.0
+text = "0.50"
+
+[node name="Massa" type="Label" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+text = "Massa:"
+
+[node name="Value" type="Label" parent="CanvasLayer/VBoxContainer/Massa"]
+layout_mode = 0
+offset_left = 76.0
+offset_right = 117.0
+offset_bottom = 23.0
+text = "0.2g"
+
+[node name="Quantidade" type="Label" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+text = "Munição:"
+
+[node name="Value" type="Label" parent="CanvasLayer/VBoxContainer/Quantidade"]
+layout_mode = 0
+offset_left = 76.0
+offset_right = 117.0
+offset_bottom = 23.0
+text = "10/10"
+
+[node name="FullAuto" type="Label" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+text = "Full-auto:"
+
+[node name="Value" type="Label" parent="CanvasLayer/VBoxContainer/FullAuto"]
+layout_mode = 0
+offset_left = 76.0
+offset_right = 117.0
+offset_bottom = 23.0
+text = "Desativado"
+
+[connection signal="gun_changed" from="." to="." method="_on_gun_changed"]

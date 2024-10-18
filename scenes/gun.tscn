@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://h883oy5idpa0"]
+
+[ext_resource type="Script" path="res://scripts/gun.gd" id="1_tf1h7"]
+
+[node name="Gun" type="Node2D"]
+script = ExtResource("1_tf1h7")
+tipo_carregador = null
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+z_index = 1
+position = Vector2(-45, -15)
+color = Color(1, 0, 0, 1)
+polygon = PackedVector2Array(0, 0, 90, 0, 90, 30, 0, 30)
+
+[node name="BulletMarker" type="Marker2D" parent="."]
+position = Vector2(45, 0)
+
+[node name="ShootDelay" type="Timer" parent="."]
+wait_time = 0.3
+one_shot = true

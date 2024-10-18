@@ -1,0 +1,89 @@
+[gd_scene load_steps=5 format=3 uid="uid://c5mtglhruqqub"]
+
+[ext_resource type="Script" path="res://scripts/carregador.gd" id="1_rqp0f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jjn50"]
+size = Vector2(20, 40)
+
+[sub_resource type="LabelSettings" id="LabelSettings_tkpej"]
+font_size = 30
+
+[sub_resource type="LabelSettings" id="LabelSettings_oa4h2"]
+font_size = 30
+
+[node name="Carregador" type="Area2D"]
+script = ExtResource("1_rqp0f")
+c_capacidade = 10
+c_quantidade = 10
+c_massa = 0.0
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2(-10, -20)
+color = Color(1, 0, 0, 1)
+polygon = PackedVector2Array(0, 0, 20, 0, 20, 40, 0, 40)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_jjn50")
+
+[node name="Container" type="VBoxContainer" parent="."]
+visible = false
+z_index = 2
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -185.5
+offset_top = -119.0
+offset_right = 185.5
+offset_bottom = -23.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Massa" type="HBoxContainer" parent="Container"]
+layout_mode = 2
+alignment = 1
+
+[node name="Text" type="Label" parent="Container/Massa"]
+layout_mode = 2
+text = "Massa:"
+label_settings = SubResource("LabelSettings_tkpej")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Value" type="Label" parent="Container/Massa"]
+layout_mode = 2
+text = "0.2g"
+label_settings = SubResource("LabelSettings_tkpej")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Quantidade" type="HBoxContainer" parent="Container"]
+layout_mode = 2
+alignment = 1
+
+[node name="Text" type="Label" parent="Container/Quantidade"]
+layout_mode = 2
+text = "Munição:"
+label_settings = SubResource("LabelSettings_tkpej")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Value" type="Label" parent="Container/Quantidade"]
+layout_mode = 2
+text = "10/10"
+label_settings = SubResource("LabelSettings_tkpej")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="Container"]
+z_index = 3
+layout_mode = 2
+text = "Aperte Espaço para pegar"
+label_settings = SubResource("LabelSettings_oa4h2")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
